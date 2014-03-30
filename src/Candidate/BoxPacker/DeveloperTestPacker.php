@@ -3,11 +3,11 @@ namespace Candidate\BoxPacker;
 
 class DeveloperTestPacker extends \Propcom\BoxPacker\BasePacker{
 
-    public function addBox(\Propcom\BoxPacker\BasePacker $box) {
+    public function addBox(DefineBox $box) {
         
     }
 
-    public function addItem(\Propcom\BoxPacker\BasePacker $item) {
+    public function addItem(DefineItem $item) {
         
     }
 
