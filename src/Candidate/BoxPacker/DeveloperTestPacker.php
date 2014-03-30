@@ -4,15 +4,21 @@ namespace Candidate\BoxPacker;
 class DeveloperTestPacker{
 
     public function addBoxes($boxes) {
-        $defineBox= new DefineBox($box);
+        $this->boxes=$boxes;
     }
 
     public function addItems($items) {
-        $defineItem=  new DefineItem($item);
+        $this->items=$items;
     }
 
     public function pack() {
-        
+        foreach ($this->boxes as $box){
+            $box=new DefineBox($box);
+            foreach($this->items as $item){
+                var_dump($item);
+            }
+            var_dump($box);
+        }
     }
 
 }
