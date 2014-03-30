@@ -3,11 +3,14 @@ namespace Candidate\BoxPacker;
 
 class DeveloperTestPacker{
 
-    public function addBox(DefineBox $box) {
-        
+    public function addBoxes($boxes) {
+        foreach($boxes as $box){
+            $defineBox= new \Candidate\BoxPacker\DefineBox($box);
+            var_dump($defineBox->getInnerDepth());
+        }
     }
 
-    public function addItem(DefineItem $item) {
+    public function addItems($items) {
         
     }
 
