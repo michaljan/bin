@@ -15,6 +15,7 @@ class DeveloperTestPacker{
         foreach ($this->boxes as $box){
             $box=new DefineBox($box);
             foreach($this->items as $item){
+                $item=new DefineItem($item);
                 var_dump($item);
             }
             var_dump($box);
