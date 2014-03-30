@@ -1,7 +1,7 @@
 <?php
 namespace Candidate\BoxPacker;
 
-class DeveloperTestPacker extends \Propcom\BoxPacker\BasePacker{
+class DeveloperTestPacker{
 
     public function addBox(DefineBox $box) {
         
@@ -13,22 +13,6 @@ class DeveloperTestPacker extends \Propcom\BoxPacker\BasePacker{
 
     public function pack() {
         
-    }
-    
-    public function addBoxes(array $boxes) {
-        //parent::addBoxes($boxes);
-        foreach ($boxes as $box){
-            addBox($box);
-        }
-        
-    }
-    
-    public function addItems(array $items) {
-        //parent::addItems($items);
-        foreach ($items as $item){
-            addItem($item);
-            
-        }
     }
 
 }
