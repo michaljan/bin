@@ -1,7 +1,7 @@
 <?php
 namespace Candidate\BoxPacker;
 
-class DefineItem implements Propcom\BoxPacker\Item{
+class DefineItem implements \Propcom\BoxPacker\Item{
     
     private $description;
     private $width;
