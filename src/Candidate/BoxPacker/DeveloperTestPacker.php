@@ -16,7 +16,11 @@ class DeveloperTestPacker{
             $box=new DefineBox($box);
             foreach($this->items as $item){
                 $item=new DefineItem($item);
-                var_dump($item);
+                if($box->getInnerVolume()<=$item->getVolume()){
+                    if($box->getInnerDepth()<=$item->getDepth() && $box->getInnerLength()<=$item->getLength() && $box->getInnerWidth()<=$item->getWidth()){
+                        
+                    }
+                }
             }
             var_dump($box);
         }
