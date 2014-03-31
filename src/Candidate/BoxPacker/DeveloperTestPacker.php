@@ -22,7 +22,6 @@ class DeveloperTestPacker{
                     }
                 }
             }
-            var_dump($box);
         }
     }
 
