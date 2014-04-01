@@ -1,5 +1,5 @@
 <?php
-class TestBackedBox implements \Propcom\BoxPacker\PackedBox{
+class TestPackedBox implements \Propcom\BoxPacker\PackedBox{
     private $box;
     private $items;
     private $weight;
