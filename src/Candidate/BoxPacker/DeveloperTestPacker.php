@@ -35,12 +35,12 @@ class DeveloperTestPacker{
                         else{
                             
                             $packedBox= new TestPackedBox($box, $items, $totalWeight);
-                            $testBox[]=$packedBox;
+                            $testBox[]=array($packedBox->getBox(),$packedBox->getItems(),$packedBox->getWeight());
                             continue 2;
                         }
                     }
                 $packedBox= new TestPackedBox($box, $items, $totalWeight);
-                $testBox[]=$packedBox;
+                $testBox[]=array($packedBox->getBox(),$packedBox->getItems(),$packedBox->getWeight());
                 continue 1;
                 }
                 else{
