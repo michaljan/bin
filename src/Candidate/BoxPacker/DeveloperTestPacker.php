@@ -16,10 +16,26 @@ class DeveloperTestPacker{
             $box=new DefineBox($box);
             foreach($this->items as $item){
                 $item=new DefineItem($item);
-                if($box->getInnerVolume()<=$item->getVolume()){
-                    if($box->getInnerDepth()<=$item->getDepth() && $box->getInnerLength()<=$item->getLength() && $box->getInnerWidth()<=$item->getWidth()){
-                        
+                $itemsNo=0;
+                if($box->getInnerDepth()<=$item->getDepth() && $box->getInnerLength()<=$item->getLength() && $box->getInnerWidth()<=$item->getWidth()){
+                    while($box->getInnerVolume()<=$totalVolume){
+                        if($box->getMaxWeight()<=$itemsWeight){
+                            $totalVolume=$totalVolume+($item->getVolume());
+                            $totalWeight=$totalWeight+($item->getWeight());
+                            $packedItems[$itemsNo]=array($item->getDescription(),$item->getDepth(),$item->getLength(),$item->getWidth());
+                            $itemsNo++;
+                        }
+                        else{
+                            $packedBox= new \TestBackedBox($box, $packedItems, $totalWeight);
+                            break;
+                        }
                     }
+                $packedBox= new \TestBackedBox($box, $packedItems, $weight);
+                return $packedBox;
+                }
+                else{
+                    echo 'box to small';
+                    
                 }
             }
         }
