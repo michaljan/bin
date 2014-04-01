@@ -1,11 +1,13 @@
 <?php
+namespace Candidate\BoxPacker;
+
 class TestPackedBox implements \Propcom\BoxPacker\PackedBox{
     private $box;
     private $items;
     private $weight;
-    public function __construct($box,$packedItems,$weight) {
+    public function __construct($box,array $items,$weight) {
         $this->box=$box;
-        $this->packedItems[]=$packedItems;
+        $this->items=$items;
         $this->weight=$weight;
     }
     public function getWeight() {
