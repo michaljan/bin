@@ -28,11 +28,11 @@ class DeveloperTestPacker{
                             $itemsNo++;
                         }
                         else{
-                            $packedBox= new \TestPackedBox($box, $packedItems, $totalWeight);
+                            $packedBox= new TestPackedBox($box, $packedItems, $totalWeight);
                             break;
                         }
                     }
-                $packedBox= new \TestPackedBox($box, $packedItems, $totalWeight);
+                $packedBox= new TestPackedBox($box, $packedItems, $totalWeight);
                 return $packedBox;
                 }
                 else{
