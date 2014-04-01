@@ -14,7 +14,6 @@ class DeveloperTestPacker{
     public function addItems($items) {
         $this->items=$items;
     }
-
     public function pack() {
         
         foreach ($this->boxes as $box){
