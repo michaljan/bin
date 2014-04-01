@@ -20,9 +20,8 @@ class DeveloperTestPacker{
                 $totalWeight=0;
                 $totalVolume=0;
                 if($box->getInnerDepth()>=$item->getDepth() && $box->getInnerLength()>=$item->getLength() && $box->getInnerWidth()>=$item->getWidth()){
-                    while($box->getInnerVolume()>=$totalVolume){
-                        echo 'test';
-                        if($box->getMaxWeight()>=$totalWeight){
+                    while($box->getInnerVolume()>$totalVolume){
+                        if($box->getMaxWeight()>$totalWeight){
                             $totalVolume=$totalVolume+($item->getVolume());
                             $totalWeight=$totalWeight+($item->getWeight());
                             $packedItems[$itemsNo]=array($item->getDescription(),$item->getDepth(),$item->getLength(),$item->getWidth());
@@ -31,11 +30,13 @@ class DeveloperTestPacker{
                         else{
                             
                             $packedBox= new TestPackedBox($box, $packedItems, $totalWeight);
-                            break;
+                            return $packedBox;
+                            continue 2;
                         }
                     }
                 $packedBox= new TestPackedBox($box, $packedItems, $totalWeight);
                 return $packedBox;
+                continue 1;
                 }
                 else{
                     echo 'box to small';
